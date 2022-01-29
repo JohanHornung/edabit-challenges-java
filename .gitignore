@@ -1,0 +1,12 @@
+#IntelliJ
+.idea
+*.iml
+# Eclipse
+*.project
+*.classpath
+# VS Code
+.vscode/
+
+# Java SE
+bin/        
+lib/        
