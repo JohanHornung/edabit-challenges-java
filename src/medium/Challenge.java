@@ -1,5 +1,6 @@
 package medium;
 
+import java.util.Arrays;
 import java.util.stream.IntStream;
 
 // import java.util.ArrayList;
@@ -61,17 +62,33 @@ public class Challenge {
     
     public static boolean isHeteromecic(int n) {
         if (n == 0 || n == 2) return true;
-        // alternative
-        // computing square root of n
-        // int k = (int) Math.sqrt(n);
-        // if (k * (k + 1) == n || k * (k - 1) == n) return true;
-        
         for (int i = 0; i < n; i++) {
             if (i * (i + 1) == n) return true;
         }
         return false;
+        // alternative
+        // computing square root of n
+        // int k = (int) Math.sqrt(n);
+        // if (k * (k + 1) == n || k * (k - 1) == n) return true;
+        // return false;
     }
     public static boolean cons(int[] arr) {
-		return true;
+		Arrays.sort(arr);
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] >= arr[i+1]) return false;
+        }
+        return true;
 	}
+    public static int largestGap(int[] numbers) {
+        Arrays.sort(numbers);
+        int largestGap = 0;
+        for (int i = 0; i < numbers.length - 1; i++) {
+            int gap = Math.abs(numbers[i] - numbers[i+1]);
+            if (gap > largestGap) largestGap = gap;
+        }
+        return largestGap;
+	}
+    public static boolean validate(String pin) {
+        return true;
+    }
 }
