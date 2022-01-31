@@ -55,9 +55,7 @@ public class Challenge {
                             // .limit(size)
                             // .mapToInt(Integer::intValue)
                             // .toArray())
-    //                  .toArray(int[][]::new)
-    //         ;
-	// }
+    //                  .toArray(int[][]::new);
     }
     public static int findSeat(int n, int[] arr) {
         int maxCapacity = n / arr.length;
