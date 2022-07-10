@@ -18,6 +18,9 @@ public class Challenge {
         // System.out.println(sevenBoom(arr));        
         // System.out.println(sevenBoom(arr1));        
         // System.out.println(isHeteromecic(110));
+        // String[] pins = {"2344", "w32 ", "ab12", "acid"};
+        // for (String pin : pins) System.out.println(validate(pin));
+
     }
     public static int missingNum(int[] nums) {
         // returning rest of total sum of array
@@ -54,8 +57,8 @@ public class Challenge {
 	}
     public static String sevenBoom(int[] arr) {
 		for (int i = 0; i < arr.length; i++) {
-            String elem = String.valueOf(arr[i]);
-            if (elem.contains("7")) return "Boom!";
+                String elem = String.valueOf(arr[i]);
+                if (elem.contains("7")) return "Boom!";
         }
         return "there is no 7 in the array";
     }   // return Arrays.toString(arr).contains("7") ? "Boom!": "there is no 7 in the array";
@@ -89,6 +92,30 @@ public class Challenge {
         return largestGap;
 	}
     public static boolean validate(String pin) {
+        boolean hasRightLength = pin.length() == 4 || pin.length() == 6;
+        if (!hasRightLength) return false;
+        for (int i = 0; i < pin.length(); i++) {
+            if (!(Character.isDigit(pin.charAt(i)) && !Character.isWhitespace(pin.charAt(i)))) {
+                return false;
+            }
+        }
         return true;
+    }
+    /*
+    Given any number, we can create a new number by adding the sums of squares of digits of that number. 
+    For example, given 203, our new number is 4 + 0 + 9 = 13. Numbers which stay at 1 are called happy. 
+    */
+    public static boolean happy(int num) {
+        boolean happy = false;
+        int newNumber = 0;
+        while (newNumber != 4 || newNumber != 1) {
+            while (num != 0) {
+                int digit = num % 10;
+                newNumber += digit * digit;
+                num /= 10;
+            }
+            
+        }
+        return happy;
     }
 }
